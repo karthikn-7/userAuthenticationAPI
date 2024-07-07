@@ -13,12 +13,7 @@ app.config["SECRET_KEY"] = getenv("JWT_SECRET_KEY")
 
 @app.route("/")
 def home():
-    return jsonify({"message":"welcome to todo api",
-                    "routes":{
-                         "register": "/api/register",
-                         "login": "/api/login" ,
-                         "alltasks": "/api/todo" 
-                        } })
+    return jsonify({"flash":"user authentication"})
 
 
 # user creation route
