@@ -44,7 +44,7 @@ def register():
                     hashed_password = hashpw( password=encoded_password, salt=salt )
                     
                     user = { "username": username,"password":hashed_password }
-                    us.register_user(document=user, app="todo")
+                    us.register_user(document=user)
 
                     return jsonify({"message":"user created successfully!"}),201
 

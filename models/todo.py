@@ -10,10 +10,9 @@ user_collection = connection.UsersDB.users
 
 # USER DATABASE
 class Users:
-    def register_user(self,document: dict, app:str):
+    def register_user(self,document: dict):
         try:
-            doc = { "application":app, "username":document["username"], "password":document["password"] }
-            user_collection.insert_one(doc)
+            user_collection.insert_one(document)
             return True
         
         except Exception as error:
