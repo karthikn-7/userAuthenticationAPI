@@ -1,12 +1,12 @@
 import datetime
 from os import getenv
 from flask import Flask, request, jsonify
-from models import todo
+from models import usersdb
 from bcrypt import hashpw, gensalt, checkpw
 import jwt
 
 
-us = todo.Users()
+us = usersdb.Users()
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = getenv("JWT_SECRET_KEY")
@@ -102,4 +102,4 @@ def internal_server_error(error):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0",port=5003)
+    app.run(debug=True, host="0.0.0.0")
